@@ -9,6 +9,7 @@ var express = require('express'),
   http = require('http'),
   path = require('path');
 
+
 var app = module.exports = express();
 
 
@@ -46,7 +47,10 @@ app.get('/', routes.index);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
-app.get('/api/name', api.name);
+//app.get('/api/name', api.name);
+app.get('/decks', api.getAllDecks);
+app.get('/deck/:id', api.getDeckById);
+app.post('/decks', api.postDeck);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
