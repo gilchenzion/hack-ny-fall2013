@@ -1,0 +1,27 @@
+ @import "bourbon/bourbon";
+ @import "neat/neat";
+
+body {
+	@include outer-container;
+}
+
+#nav {
+	@include span-columns(12);
+
+	background-color:#333;
+
+	li {
+		@include span-columns(4);
+		margin: 1em 0em;
+		text-align:center;
+
+		a {
+		color:white;
+		}
+		list-style-type:none;
+		display:inline-block;
+
+		&.current {
+		}
+	}
+}
