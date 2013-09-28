@@ -10,16 +10,20 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
+    when('/', {
+      templateUrl: 'partials/home',
+      controller: 'homeCtrl'
     }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
+    when('/create', {
+      templateUrl: 'partials/create',
+      controller: 'createCtrl'
+    }).
+    when('/about', {
+      templateUrl: 'partials/about',
+      controller: 'aboutCtrl'
     }).
     otherwise({
-      redirectTo: '/view1'
+      redirectTo: '/home'
     });
 
   $locationProvider.html5Mode(true);
