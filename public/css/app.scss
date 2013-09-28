@@ -29,3 +29,7 @@
   content: "";
   padding: 0;
 }
+
+@mixin border {
+	border:1px solid black;
+}
