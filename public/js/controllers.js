@@ -4,7 +4,7 @@
 
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, $http) {
-
+    
     $http({
       method: 'GET',
       url: '/api/name'
