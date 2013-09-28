@@ -14,6 +14,7 @@ var deckSchema = mongoose.Schema({
 	numOfCards: Number,
 	numOfNouns: Number,
 	numOfAdjs: Number,
+	numOfVotes: Number,
 	tags:[String],
 	nounCards: [String],
 	adjCards: [String],
