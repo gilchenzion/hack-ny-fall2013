@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 /* app css stylesheet */
 .menu {
   list-style: none;
@@ -21,3 +26,14 @@
 .menu > li:nth-child(1):before {
   content: "";
   padding: 0; }
+
+body {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  body:before, body:after {
+    content: " ";
+    display: table; }
+  body:after {
+    clear: both; }

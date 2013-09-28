@@ -1,4 +1,5 @@
- @import "../bourbon/_bourbon.scss";
+ @import "bourbon/bourbon";
+ @import "neat/neat";
  /* app css stylesheet */
 
 .menu {
@@ -30,6 +31,6 @@
   padding: 0;
 }
 
-@mixin border {
-	border:1px solid black;
+body {
+	@include outer-container;
 }

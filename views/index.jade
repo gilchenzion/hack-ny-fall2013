@@ -2,14 +2,15 @@ extends layout
 
 block body
   div(ng-controller='AppCtrl')
-    h2 Hello {{name}}
-    ul.menu
+    ul.menu#nav
       li
         a(href='') home
       li
         a(href='create') create
       li
         a(href='about') about
+
+    h1 PageName
 
     div(ng-view)
 
