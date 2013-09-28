@@ -5,4 +5,4 @@ Project for HackNY Fall 2013
 
 Gil Chen-Zion
 Gilad Penn (freeslugs)
-Paul Cadosch
+Paul Cadosch (Mimoun Cadosch)
