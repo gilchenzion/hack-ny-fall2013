@@ -1,7 +1,8 @@
- @import "bourbon/bourbon";
- @import "neat/neat";
+@import "clear";
+@import "mixins";
 
- @import "main.scss";
- @import "forms";
- @import "clear";
- @import "card";
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+@import "main";
+@import "home";

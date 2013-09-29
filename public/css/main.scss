@@ -1,130 +1,47 @@
+@import "mixins";
+
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-@import "colors";
-@import "forms";
-
-
 $mobile: new-breakpoint(max-width 767px 6);
+$tablet: new-breakpoint(max-width 980px 9);
+
 body {
-
-  font-family:Helvetica, Arial, sans-serif;
-  color:#555;
   background-color:#F0F0F0;
-  padding:0em;
+  color:#333;
+  font-family:Helvetica, Arial, sans-serif;
 }
-#main {
+
+#container {
   @include outer-container;
-  margin-bottom:2em;
-}
 
-a {
-  text-decoration:none;
-}
-
-@mixin border-ends($radius) {
-  &:first-child {
-    border-top-left-radius:$radius;
-    border-bottom-left-radius:$radius;
-  }
-  &:last-child {
-    border-top-right-radius:$radius;
-    border-bottom-right-radius:$radius;
+  @include media($mobile) {
+    margin:0;
   }
 }
 
 #nav {
+  @include gradient(#CEA);
   @include span-columns(12);
-  padding:0;
+  border-radius:10px;
 
-  @include border-ends(10px);
-  border-top-right-radius:10px;
-  border-bottom-right-radius:10px;
-
-  @include linear-gradient($navColor, lighten($navColor,10));
   li {
-    @include border-ends(10px);
+    @include round-ends;
     @include span-columns(4);
+    list-style-type:none;
+    display:inline-block;
+
     text-align:center;
 
     a {
       display:block;
       padding: 1em 0em;
       color:white;
-      @include fill-parent;
-    }
-
-    list-style-type:none;
-    display:inline-block;
-
-    &.active {
-      @include active-button;
     }
   }
-}
 
-#main {
-  clear:both;
-}
-
-
-.jumbotron {
-  @include span-columns(12);
-  padding:1.5em;
-
-
-  @include media($mobile) {
-    padding-left:0em;
-    padding-right:0em;
-  }
-  text-align:center;
-  font-size:2.5em;
-  max-width:100%;
-}
-
-div {
-  @include outer-container;
-}
-
-#main p.description {
-  margin-bottom:2em;
-}
-
-input#generate-terms {
-  @include shift(1);
-  @include span-columns(7);
-
-  @include media($mobile) {
-    font-size:0.5em;
-    @include span-columns(4);
-    @include shift(0);
-  }
-}
-#generate {
-  @include span-columns(3);
-  @include media($mobile) {
-    font-size:0.5em;
-    @include span-columns(2);
-  }
-}
-
-.deckboxes {
-  @include span-columns(12);
-  .deckbox {
-    padding:0.5em;
-    background-color:#666;
-    color:white;
-    @include span-columns(4);
-    text-align:center;
-  }
+  margin-bottom:1em;
 }
 
 #footer {
-  background-color:$navColor;
-  padding:1em;
-
-  max-width:100%;
-  a {
-    color:white;
-  }
 }

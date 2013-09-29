@@ -1,0 +1,27 @@
+.jumbotron {
+  @include span-columns(12);
+  padding:1.5em 3em;
+
+  font-size:2em;
+}
+
+p.description {
+}
+
+#querybox {
+  form {
+    input {
+    }
+    button {
+    }
+  }
+}
+
+#decklist-wrap {
+  @include outer-container;
+  .decklist {
+    @include span-columns(3);
+    .deck {
+    }
+  }
+}
