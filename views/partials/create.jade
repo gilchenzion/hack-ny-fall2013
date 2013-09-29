@@ -3,9 +3,20 @@
   .nouns(ng-repeat="noun in newDeck.nouns")
     .card 
       button.edit(ng-hide="editing", ng-click="editing = true") edit
-      p(ng-hide="editing")
+      p
         {{noun}}
-        
-      button.edit(ng-show="editing", ng-click="editing = false") done
-      form(ng-show="editing", ng-submit="editing = false")
-        input(type="text", ng-bind="noun")
+      
+      form(ng-show="editing")
+        input(type="text", ng-model="newText", ng-init="newText = noun")
+        button.edit(ng-show="editing", ng-click="editing = false; newDeck.nouns[$index] = newText") done
+  .adjs(ng-repeat="adj in newDeck.adjs")
+    .card 
+      button.edit(ng-hide="editing", ng-click="editing = true") edit
+      p
+        {{adj}}
+      
+      form(ng-show="editing")
+        input(type="text", ng-model="newText2", ng-init="newText2 = adj")
+        button.edit(ng-show="editing", ng-click="editing = false; newDeck.adjs[$index] = newText2") done
+
+         

@@ -33,6 +33,18 @@ angular.module('myApp.controllers', []).
     }
   }).
   controller('createCtrl', function ($scope, $rootScope) {
+    $scope.newDeck = {nouns: {
+    0: "Sunday",
+    1: "capital",
+    2: "decided",
+    3: "growing",
+    4: "heard",
+    5: "heart",
+    6: "medical",
+    7: "nothing",
+    8: "service",
+    9: "similar"}
+}
     // write Ctrl here
   }).
   controller('aboutCtrl', function ($scope) {
