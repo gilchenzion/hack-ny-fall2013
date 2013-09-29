@@ -21,7 +21,8 @@ var deckSchema = mongoose.Schema({
 	tags:[String],
 	nounCards: [String],
 	adjCards: [String],
-	generated: Boolean
+	generated: Boolean,
+	editorsPick: Boolean
 });
 
 var Deck = db.model('Deck', deckSchema);
@@ -37,12 +38,21 @@ exports.getAllDecks = function (req, res) {
 	}
 	var page = objParams.page;
 	var limit = objParams.limit;
+	var sortBy = objParams.sort_by;
+	var sort = {};
+	if(sortBy == "date") {
+		sort = {createdAt: -1};
+	} else if(sortBy == "votes") {
+		sort = {numOfVotes: -1};
+	} else if(sortBy == "editorspick") {
+		params.editorsPick = true;
+	}
 	var skip = limit * (page - 1);
-	Deck.find(params, {} ,{limit: limit, skip: skip}, function(err, result) {
+	Deck.find(params, {} ,{limit: limit, skip: skip, sort: sort}, function(err, result) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.send({
+			return res.json({
 				count: result.length,
 				result: result
 			});
@@ -55,7 +65,7 @@ exports.getDeckById = function (req, res) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.send(result);
+			return res.json(result);
 		}
 	});
 };
@@ -69,7 +79,7 @@ exports.postDeck = function (req, res) {
 			console.log('woooot');
 		}
 	});
-	return res.send(newDeck);
+	return res.json(newDeck);
 };
 
 exports.generateDeck = function (req, res) {
@@ -132,7 +142,7 @@ exports.generateDeck = function (req, res) {
 		}
 
 		// return list of nouns and adjs
-		res.send({
+		res.json({
 			nouns: uniqueWords,
 			adjs: justAdjs
 		});
