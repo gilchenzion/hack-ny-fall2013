@@ -218,7 +218,6 @@ p.description {
   margin-right: 2.35765%;
   width: 31.76157%;
   text-align: center;
-  background-color: #CCC;
   padding: 0.5em;
   padding-bottom: 0; }
   #decklist-wrap .decklist:before, #decklist-wrap .decklist:after {
@@ -228,23 +227,29 @@ p.description {
     clear: both; }
   #decklist-wrap .decklist:last-child {
     margin-right: 0; }
+  #decklist-wrap .decklist h2 {
+    padding-bottom: 0.5em;
+    border-bottom: 1px solid #abacb0; }
   #decklist-wrap .decklist .deck {
     height: 3em;
     display: block;
     float: left;
     margin-right: 2.35765%;
     width: 23.23176%;
-    background-color: #333;
-    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: #c5c6c9;
+    border: 1px solid #919297;
     margin-bottom: 0.4em;
-    padding: 0.25em;
-    color: white; }
+    padding: 0.25em; }
     #decklist-wrap .decklist .deck:last-child {
       margin-right: 0; }
     #decklist-wrap .decklist .deck:nth-child(5n) {
       margin-right: 0; }
     #decklist-wrap .decklist .deck:nth-child(5n+1) {
       clear: left; }
+    #decklist-wrap .decklist .deck p {
+      font-weight: normal; }
     @media screen and (max-width: 980px) {
       #decklist-wrap .decklist .deck {
         display: block;
@@ -353,3 +358,29 @@ button, .button {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8ac4f9), color-stop(100%, #59acf7));
     background-image: -webkit-linear-gradient(#8ac4f9, #59acf7);
     background-image: linear-gradient(#8ac4f9, #59acf7); }
+
+.card {
+  position: relative;
+  background-color: white;
+  border: 1px solid #b3b3b3;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 23.23176%;
+  height: 20em;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: middle; }
+  .card:last-child {
+    margin-right: 0; }
+  .card span.text {
+    font-size: 2em; }
+  .card.noun {
+    color: #161620; }
+  .card.adj {
+    color: #c5191e; }
+  .card button {
+    position: absolute;
+    right: 0px;
+    top: 0px; }

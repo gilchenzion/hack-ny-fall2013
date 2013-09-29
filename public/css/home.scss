@@ -54,23 +54,34 @@ p.description {
   .decklist {
     @include outer-container;
     @include span-columns(4);
+
     
     text-align:center;
-    background-color:#CCC;
 
     padding:0.5em;
     padding-bottom: 0;
+
+    h2 {
+      padding-bottom:0.5em;
+      border-bottom:1px solid lighten($gray, 10);
+    }
 
     .deck {
       height:3em;
       @include span-columns(3);
       @include omega(5n);
 
-      background-color:#333;
-      border:1px solid white;
+      border-radius:5px;
+
+      font-weight:bold;
+      p {
+        font-weight:normal;
+      }
+
+      background-color:lighten($gray,20);
+      border:1px solid $gray;
       margin-bottom: 0.4em;
       padding: 0.25em;
-      color: white;
 
       @include media($tablet) {
         @include span-columns(4);
