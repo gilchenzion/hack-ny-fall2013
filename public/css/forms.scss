@@ -1,0 +1,14 @@
+ @import "bourbon/bourbon";
+ @import "neat/neat";
+
+ @import "colors";
+
+input {
+  font-size:1em;
+  padding:0.25em;
+  border:1px solid black;
+
+  &.search {
+    border-radius:10px;
+  }
+}
