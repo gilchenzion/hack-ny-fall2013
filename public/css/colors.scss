@@ -6,7 +6,7 @@ $red:#C5191E;
 $teal:darken(#8AC4F9,10);
 $gray:darken(#ABACB0,10);
 
-$active:#6699FF;
+$active:darken($teal, 10);
 $cancel:$red;
 
 $mainNav:#51C5D4;

@@ -14,7 +14,7 @@
 p.description {
   text-align:center;
   margin-bottom:1em;
-  color: #FF3333;
+  color: black;
 }
 
 #querybox {
@@ -22,7 +22,7 @@ p.description {
   form {
     input, button {
       padding:0.25em;
-      font-size: 18px;
+      font-size: 1.25em;
       color: #000000;
 
     }
@@ -30,8 +30,7 @@ p.description {
       border-top-left-radius:6px;
       border-bottom-left-radius:6px;
       width: 350px;
-      font-size: 18px;
-
+      
       @include media($mobile) {
         @include span-columns(6);
         border-top-right-radius:10px;
@@ -47,7 +46,7 @@ p.description {
       margin-left:-3px;
       border-top-right-radius:10px;
       border-bottom-right-radius:10px;
-
+      color: white;
       @include media($mobile) {
         border-top-left-radius:10px;
         border-bottom-left-radius:10px;

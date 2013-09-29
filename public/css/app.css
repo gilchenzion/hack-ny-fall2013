@@ -234,19 +234,18 @@ body {
 p.description {
   text-align: center;
   margin-bottom: 1em;
-  color: #FF3333; }
+  color: black; }
 
 #querybox {
   text-align: center; }
   #querybox form input, #querybox form button {
     padding: 0.25em;
-    font-size: 18px;
+    font-size: 1.25em;
     color: #000000; }
   #querybox form input {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    width: 350px;
-    font-size: 18px; }
+    width: 350px; }
     @media screen and (max-width: 767px) {
       #querybox form input {
         display: block;
@@ -263,7 +262,8 @@ p.description {
   #querybox form button {
     margin-left: -3px;
     border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px; }
+    border-bottom-right-radius: 10px;
+    color: white; }
     @media screen and (max-width: 767px) {
       #querybox form button {
         border-top-left-radius: 10px;
@@ -447,7 +447,7 @@ input, textarea {
   border: 1px solid #919297; }
   input:focus, textarea:focus {
     outline: none;
-    border-color: #6699ff; }
+    border-color: #2993f4; }
 
 textarea {
   width: 80% !important; }
@@ -460,11 +460,11 @@ button, .button {
   background-image: linear-gradient(#abacb0, #919297);
   color: white; }
   button.primary, .button.primary {
-    border: 1px solid #6699ff;
-    background-color: #99bbff;
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #99bbff), color-stop(100%, #6699ff));
-    background-image: -webkit-linear-gradient(#99bbff, #6699ff);
-    background-image: linear-gradient(#99bbff, #6699ff); }
+    border: 1px solid #2993f4;
+    background-color: #59acf7;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+    background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+    background-image: linear-gradient(#59acf7, #2993f4); }
 
 * {
   -webkit-box-sizing: border-box;
