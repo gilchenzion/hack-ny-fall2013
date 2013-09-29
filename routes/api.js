@@ -52,7 +52,7 @@ exports.getAllDecks = function (req, res) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.send({
+			return res.json({
 				count: result.length,
 				result: result
 			});
@@ -65,7 +65,7 @@ exports.getDeckById = function (req, res) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.send(result);
+			return res.json(result);
 		}
 	});
 };
@@ -79,7 +79,7 @@ exports.postDeck = function (req, res) {
 			console.log('woooot');
 		}
 	});
-	return res.send(newDeck);
+	return res.json(newDeck);
 };
 
 exports.generateDeck = function (req, res) {
@@ -142,7 +142,7 @@ exports.generateDeck = function (req, res) {
 		}
 
 		// return list of nouns and adjs
-		res.send({
+		res.json({
 			nouns: uniqueWords,
 			adjs: justAdjs
 		});
