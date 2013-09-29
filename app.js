@@ -44,12 +44,13 @@ if (app.get('env') === 'production') {
 
 // serve index and view partials
 app.get('/', routes.index);
+app.get('/deck/:id', api.getDeckById);
 app.get('/partials/:name', routes.partials);
 
 // JSON API
 //app.get('/api/name', api.name);
 app.get('/decks', api.getAllDecks);
-app.get('/deck/:id', api.getDeckById);
+
 app.post('/decks', api.postDeck);
 app.get('/decks/generate', api.generateDeck);
 
