@@ -102,3 +102,8 @@ input#generate-terms {
     @include span-columns(2);
   }
 }
+
+#footer {
+	background-color: lightgray;
+	padding: 1em;
+}
