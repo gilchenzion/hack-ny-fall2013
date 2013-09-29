@@ -1,0 +1,29 @@
+@import "mixins";
+@import "colors";
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+.decklist {
+  @include outer-container;
+}
+.deck.browse {
+  @include span-columns(4);
+  @include omega(n);
+  height:6em;
+  float:left;
+
+  border-radius:10px;
+
+  background-color:$cardColor;
+  margin:10px;
+
+  text-align:center;
+
+  a {
+    margin-top:2em;
+
+    display:block;
+    clear:both;
+  }
+}
