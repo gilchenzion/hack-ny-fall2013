@@ -3,7 +3,7 @@
 
  @import "colors";
 
-input {
+input, button, textarea {
   font-size:1em;
   padding:0.25em;
   border:1px solid black;
@@ -11,4 +11,8 @@ input {
   &.search {
     border-radius:10px;
   }
+}
+
+button {
+    border-radius:10px;
 }

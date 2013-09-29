@@ -69,3 +69,25 @@ a {
       background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #356ac2), color-stop(100%, #5886d2));
       background-image: -webkit-linear-gradient(#356ac2, #5886d2);
       background-image: linear-gradient(#356ac2, #5886d2); }
+
+#main {
+  clear: both; }
+
+.jumbotron {
+  text-align: center;
+  font-size: 3em; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input, button, textarea {
+  font-size: 1em;
+  padding: 0.25em;
+  border: 1px solid black; }
+  input.search, button.search, textarea.search {
+    border-radius: 10px; }
+
+button {
+  border-radius: 10px; }
