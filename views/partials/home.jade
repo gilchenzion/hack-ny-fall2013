@@ -8,31 +8,13 @@
 #decklist-wrap
   .decklist 
     h2 Popular
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly
+    .deck(ng-repeat="deck in voteDecks.result")
+      a(href="#") {{deck.title}}
   .decklist 
-    h2 Trending
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly
+    h2 Editor's Picks
+    .deck(ng-repeat="deck in editorsDecks.result")
+      a(href="#") {{deck.title}}
   .decklist 
     h2 Recent
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly
-    .deck Stuff
-    .deck Things
-    .deck Guys
-    .deck Silly 
+    .deck(ng-repeat="deck in dateDecks.result")
+      a(href="#") {{deck.title}}

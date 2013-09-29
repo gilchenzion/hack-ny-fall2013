@@ -31,6 +31,54 @@ angular.module('myApp.controllers', []).
       });
 
     }
+
+    $http({
+        method: 'GET',
+        url: '/decks',
+        params: {sort_by: "vote"}
+      }).
+      success(function (data, status, headers, config) {
+        $rootScope.voteDecks = data;
+        console.log(data);
+      }).
+      error(function (data, status, headers, config) {
+        console.log("error");
+      });
+
+      $http({
+        method: 'GET',
+        url: '/decks',
+        params: {sort_by: "date"}
+      }).
+      success(function (data, status, headers, config) {
+        $rootScope.dateDecks = data;
+        console.log(data);
+      }).
+      error(function (data, status, headers, config) {
+        console.log("error");
+      });
+
+      $http({
+        method: 'GET',
+        url: '/decks',
+        params: {sort_by: "editorspick"}
+      }).
+      success(function (data, status, headers, config) {
+        $rootScope.editorsDecks = data;
+        console.log(data);
+      }).
+      error(function (data, status, headers, config) {
+        console.log("error");
+      });
+
+    $scope.recent = function() {
+
+    }
+
+    $scope.editors = function() {
+
+    }
+
   }).
   controller('createCtrl', function ($scope, $rootScope) {
     // write Ctrl here
