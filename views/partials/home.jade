@@ -1,22 +1,37 @@
 .jumbotron
-  form(ng-submit="submit()")
-    p.description Generate your own deck of Hacks2Packs cards by typing in a search term below.
-
-    input.search#generate-terms(type="text", placeholder="Topic (ex. Miley Cyrus, Syria)...", ng-model="formText")
-    button#generate(type="submit") Generate
-
-.deckboxes
-  .deckbox.popular
-    h2 Popular
-    .deck Stuff
-    .deck More Stuff
-  .deckbox.trending
-    h2 Trending
-    .deck Twerking
-    .deck Bashar
-    .deck Twerking
-    .deck Twerking
-    .deck Bashar
-    .deck Bashar
-  .deckbox.recent
-    h2 Recent
+  p.description Generate your own deck of Hacks2Packs cards by typing in a search term below.
+  #querybox
+    form(ng-submit="submit()")
+      input(type="text", placeholder="Topic (ex. Miley Cyrus, Syria)...", ng-model="formText")
+      button(type="submit") Generate
+  #decklist-wrap
+    .decklist 
+      h2 Popular
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly
+    .decklist 
+      h2 Trending
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly
+    .decklist 
+      h2 h2 Recent
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly
+      .deck Stuff
+      .deck Things
+      .deck Guys
+      .deck Silly 
