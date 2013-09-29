@@ -3,8 +3,12 @@
 .jumbotron {
   @include span-columns(12);
   padding:1.5em 3em;
-
   font-size:2em;
+
+  @include media($mobile) {
+    padding:1.5em 0;
+  }
+
 }
 
 p.description {
@@ -24,30 +28,37 @@ p.description {
     @include outer-container;
     @include span-columns(4);
     
-
     text-align:center;
     background-color:#CCC;
 
     padding:0.5em;
-
-    @include media($tablet) {
-    }
-    @include media($mobile) {
-    }
+    padding-bottom: 0;
 
     .deck {
       height:3em;
-
       @include span-columns(3);
+      @include omega(5n);
+
+      background-color:#333;
+      border:1px solid white;
+      margin-bottom: 0.4em;
+      padding: 0.25em;
+      color: white;
 
       @include media($tablet) {
         @include span-columns(4);
+        @include omega(0n);
+        width: 48%;
+        &:nth-child(odd) {
+          margin-right: 0;
+        }
+
       }
       @include media($mobile) {
         @include span-columns(6);
+        @include omega(0n);
       }
-      background-color:#333;
-      border:1px solid white;
+
     }
   }
 }
