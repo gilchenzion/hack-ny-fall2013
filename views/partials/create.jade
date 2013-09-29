@@ -12,7 +12,6 @@
     p(ng-hide="editing")
       {{noun}}
 
-  .card
     form(ng-show="editing")
       button.edit(ng-show="editing", ng-click="editing = false; newDeck.nouns[$index] = newText") done
       textarea(ng-model="newText", ng-init="newText = noun")
@@ -25,7 +24,7 @@
     
     p(ng-hide="editing")
       {{adj}}
-  .card
+
     form(ng-show="editing")
       button.edit(ng-show="editing", ng-click="editing = false; newDeck.adjs[$index] = newText2") done
       textarea(ng-model="newText2", ng-init="newText2 = adj")
