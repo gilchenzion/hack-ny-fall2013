@@ -48,7 +48,7 @@ body {
     }
 
     &.active {
-      @include gradient($mainNav);
+      @include gradient($active);
     }
   }
 

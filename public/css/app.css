@@ -111,10 +111,10 @@ body {
       padding: 1em 0em;
       color: white; }
     #nav li.active {
-      background-color: #7ad3de;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7ad3de), color-stop(100%, #51c5d4));
-      background-image: -webkit-linear-gradient(#7ad3de, #51c5d4);
-      background-image: linear-gradient(#7ad3de, #51c5d4); }
+      background-color: #59acf7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+      background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+      background-image: linear-gradient(#59acf7, #2993f4); }
 
 #footer {
   position: fixed;
@@ -195,10 +195,10 @@ body {
       padding: 1em 0em;
       color: white; }
     #nav li.active {
-      background-color: #7ad3de;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7ad3de), color-stop(100%, #51c5d4));
-      background-image: -webkit-linear-gradient(#7ad3de, #51c5d4);
-      background-image: linear-gradient(#7ad3de, #51c5d4); }
+      background-color: #59acf7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+      background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+      background-image: linear-gradient(#59acf7, #2993f4); }
 
 #footer {
   position: fixed;
@@ -325,7 +325,7 @@ p.description {
       #decklist-wrap .decklist .deck a:visited {
         text-decoration: none; }
       #decklist-wrap .decklist .deck a {
-        color: #FF8000; }
+        color: black; }
       #decklist-wrap .decklist .deck p {
         font-weight: normal; }
       @media screen and (max-width: 980px) {
@@ -417,10 +417,10 @@ body {
       padding: 1em 0em;
       color: white; }
     #nav li.active {
-      background-color: #7ad3de;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7ad3de), color-stop(100%, #51c5d4));
-      background-image: -webkit-linear-gradient(#7ad3de, #51c5d4);
-      background-image: linear-gradient(#7ad3de, #51c5d4); }
+      background-color: #59acf7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+      background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+      background-image: linear-gradient(#59acf7, #2993f4); }
 
 #footer {
   position: fixed;
@@ -527,10 +527,10 @@ body {
       padding: 1em 0em;
       color: white; }
     #nav li.active {
-      background-color: #7ad3de;
-      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7ad3de), color-stop(100%, #51c5d4));
-      background-image: -webkit-linear-gradient(#7ad3de, #51c5d4);
-      background-image: linear-gradient(#7ad3de, #51c5d4); }
+      background-color: #59acf7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+      background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+      background-image: linear-gradient(#59acf7, #2993f4); }
 
 #footer {
   position: fixed;
@@ -566,7 +566,8 @@ body {
   clear: both;
   text-align: center;
   *zoom: 1;
-  width: 100%; }
+  width: 100%;
+  font-size: 1.5em; }
   .controlset:before, .controlset:after {
     content: " ";
     display: table; }
@@ -678,12 +679,13 @@ input.title {
   float: left;
   margin-right: 2.35765%;
   width: 31.76157%;
-  height: 6em;
   float: left;
   border-radius: 10px;
   background-color: white;
   margin: 10px;
-  text-align: center; }
+  padding: 1em;
+  text-align: center;
+  border: 1px solid #919297; }
   .deck.browse:last-child {
     margin-right: 0; }
   .deck.browse:nth-child(n) {
@@ -691,4 +693,5 @@ input.title {
   .deck.browse a {
     margin-top: 2em;
     display: block;
-    clear: both; }
+    clear: both;
+    color: #919297; }
