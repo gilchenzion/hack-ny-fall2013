@@ -111,7 +111,7 @@ exports.generateDeck = function (req, res) {
 	var query = objParams.q;
 	var adjs = objParams.adjs;
 	if(adjs == null) {
-		adjs = 10;
+		adjs = 50;
 	}
 	var maxNouns = objParams.max_nouns;
 	if(maxNouns == null) {

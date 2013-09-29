@@ -245,7 +245,7 @@ p.description {
   #querybox form input {
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
-    width: 350px; }
+    width: 550px; }
     @media screen and (max-width: 767px) {
       #querybox form input {
         display: block;
