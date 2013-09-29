@@ -25,7 +25,7 @@ angular.module('myApp.controllers', []).
     $scope.submit = function() {
     
       $http({
-        method: 'POST',
+        method: 'Get',
         url: '/api/decks/generate',
         params: '{text : $scope.formText}'
       }).
