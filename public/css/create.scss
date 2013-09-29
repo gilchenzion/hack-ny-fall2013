@@ -3,13 +3,26 @@
   @include outer-container;
 }
 
+.controlset {
+  display:block;
+  clear:both;
+  @include clearfix;
+}
+.nouns.card {
+  color:$nounColor;
+}
+.adjs.card {
+  color:$adjColor;
+}
+
 .card {
   @include span-columns(6);
   @include omega(n);
+
   position:relative;
 
   background-color:$cardColor;
-  border:1px solid darken($cardColor, 30);
+  border:1px dotted darken($cardColor, 30);
 
   border-radius:5px;
 
@@ -20,12 +33,6 @@
   p, textarea {
     font-size:2em;
     margin-top:4em;
-  }
-  &.noun {
-    color:$nounColor;
-  }
-  &.adj {
-    color:$adjColor;
   }
 
   button {
