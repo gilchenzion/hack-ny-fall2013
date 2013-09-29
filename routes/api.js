@@ -79,9 +79,7 @@ exports.generateDeck = function (req, res) {
 	var nyTimes = "http://api.nytimes.com/svc/semantic/v2/concept/search.json?fields=article_list&api-key=719abfb140844f90fe632b5f28db4118:3:68190560&query=" + query;
 	request(nyTimes, function(err, result) {
 		var finalWords = [];
-		console.log(result.body);
 		var results = JSON.parse(result.body).results
-		console.log(results);
 		var i, j;
 		for(i =0; i < results.length; i++) {
 			var r = results[i].article_list.results;
@@ -112,4 +110,14 @@ exports.generateDeck = function (req, res) {
 			result: uniqueWords
 		});
 	});
+};
+
+exports.generateAdjectives = function (req, res) {
+	var query = req._parsedUrl.query;
+	var objParams = queryString.parse(query);
+	var query = objParams.adjs;
+	var wordnik = "http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=false&includePartOfSpeech=adjective&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&limit=" + query;
+	request(wordnik, function(err, result) {
+	var results = result.body;
+	});		
 };
