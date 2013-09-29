@@ -22,6 +22,7 @@ angular.module('myApp.controllers', []).
 
   }).
   controller('homeCtrl', function ($scope) {
+    
     $scope.submit = function() {
     
       $http({
