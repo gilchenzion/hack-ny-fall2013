@@ -6,6 +6,7 @@
     "express": "~3.2.6",
     "jade": "~0.31.2",
     "mongoose": "~3.6.20",
-    "querystring": "~0.2.0"
+    "querystring": "~0.2.0",
+    "request": "~2.27.0"
   }
 }
