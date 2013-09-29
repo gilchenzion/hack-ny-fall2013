@@ -1,15 +1,13 @@
 extends layout
 
 block body
-  div(ng-controller='AppCtrl')
-    ul.menu#nav
+  #container(ng-controller='AppCtrl')
+    #nav
       li(ng-class="{active:isActive('/')}")
         a(href='') Home
       li(ng-class="{active:isActive('/custom')}")
         a(href='custom') Custom Create
-
     #main(ng-view)
-
   #footer
     a(href='about') About us
 
