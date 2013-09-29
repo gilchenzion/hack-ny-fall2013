@@ -88,9 +88,12 @@ exports.postVote = function (req, res) {
 }
 
 exports.postDeck = function (req, res) {
+	if(req.query.nounCards instanceof Array) {
+	
+	} else {
 	req.query.nounCards = JSON.parse(req.query.nounCards);
 	req.query.adjCards = JSON.parse(req.query.adjCards);
-
+	}
 	var newDeck = new Deck(req.query);
 	newDeck.save(function(err) {
 		if(err) {
