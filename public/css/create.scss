@@ -29,6 +29,16 @@
   #footer {
     display:none;
   }
+  .card {
+    height:33%;
+  }
+
+  button {
+    display:none;
+  }
+  .nouns, .adjs {
+    @include span-columns(12);
+  }
 }
 
 input.title {
