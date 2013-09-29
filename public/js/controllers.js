@@ -83,7 +83,7 @@ angular.module('myApp.controllers', []).
   controller('createCtrl', function ($scope, $rootScope) {
     // write Ctrl here
   }).
-  controller('viewCtrl', function ($scope, $rootScope, $route, $routeParams, $http) {
+  controller('viewCtrl', function ($scope, $rootScope, $route, $routeParams, $http, $location) {
       $http({
         method: 'GET',
         url: '/deck/' + $routeParams.deck_id
@@ -94,6 +94,7 @@ angular.module('myApp.controllers', []).
       }).
       error(function (data, status, headers, config) {
         console.log("error");
+	$location.path('/')
       });
 
   }).

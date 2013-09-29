@@ -9,12 +9,12 @@
   .decklist 
     h2 Popular
     .deck(ng-repeat="deck in voteDecks.result")
-      a(href="#") {{deck.title}}
+      a(href="decks/{{deck._id}}") {{deck.title}}
   .decklist 
     h2 Editor's Picks
     .deck(ng-repeat="deck in editorsDecks.result")
-      a(href="#") {{deck.title}}
+      a(href="decks/{{deck._id}}") {{deck.title}}
   .decklist 
     h2 Recent
     .deck(ng-repeat="deck in dateDecks.result")
-      a(href="#") {{deck.title}}
+      a(href="decks/{{deck._id}}") {{deck.title}}
