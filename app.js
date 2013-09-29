@@ -50,7 +50,7 @@ app.get('/partials/:name', routes.partials);
 //app.get('/api/name', api.name);
 app.get('/decks', api.getAllDecks);
 app.get('/deck/:id', api.getDeckById);
-
+app.post('/deck/vote/:id', api.postVote);
 app.post('/decks', api.postDeck);
 app.get('/decks/generate', api.generateDeck);
 app.post('/decks/create', api.postDeck);
