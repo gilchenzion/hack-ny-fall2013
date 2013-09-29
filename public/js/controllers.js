@@ -146,6 +146,11 @@ if (!$scope['newDeck']) {
             console.log("error");
         });
     }
+
+    $scope.printFuckYou = function() {
+	    console.log("Hey yo!");
+	    print();
+    }
 }).
 controller('viewCtrl', function ($scope, $rootScope, $route, $routeParams, $http, $location) {
     $http({
@@ -161,6 +166,10 @@ controller('viewCtrl', function ($scope, $rootScope, $route, $routeParams, $http
         $location.path('/')
     });
 
+    $scope.printFuckYou = function() {
+	    console.log("Hey yo!");
+	    print();
+    }
 }).
 controller('aboutCtrl', function ($scope) {
 });
