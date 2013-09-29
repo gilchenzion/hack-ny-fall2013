@@ -55,7 +55,7 @@ app.post('/decks', api.postDeck);
 app.get('/decks/generate', api.generateDeck);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+//app.get('/public/*', routes.index);
 
 
 /**
