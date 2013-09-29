@@ -1,6 +1,11 @@
 .controlset
 .deck
-  .nouns
-    .card Miley Cyrus
-  .adjectives
-    .card Lascivious
+  .nouns(ng-repeat="noun in newDeck.nouns")
+    .card 
+      button.edit(ng-hide="editing", ng-click="editing = true") edit
+      p(ng-hide="editing")
+        {{noun}}
+        
+      button.edit(ng-show="editing", ng-click="editing = false") done
+      form(ng-show="editing", ng-submit="editing = false")
+        input(type="text", ng-bind="noun")

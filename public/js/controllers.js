@@ -5,17 +5,6 @@
 angular.module('myApp.controllers', []).
   controller('AppCtrl', function ($scope, $http, $location) {
 
-    $http({
-      method: 'GET',
-      url: '/api/name'
-    }).
-    success(function (data, status, headers, config) {
-      $scope.name = data.name;
-    }).
-    error(function (data, status, headers, config) {
-      $scope.name = 'Error!'
-    });
-
     $scope.isActive = function(route) { 
       return route === $location.path();
     };
@@ -25,7 +14,7 @@ angular.module('myApp.controllers', []).
 
     $scope.submit = function() {
       console.log($scope.formText);
-      
+
       $http({
         method: 'GET',
         url: '/decks/generate',
@@ -35,25 +24,16 @@ angular.module('myApp.controllers', []).
       success(function (data, status, headers, config) {
         $rootScope.newDeck = data;
         console.log(data);
-        console.log(status);
-        console.log(headers);
-        console.log(config);
-/*        $scope.$apply(function() {
-          $location.path("/create"); 
-        });*/
+          $location.path("/create");
       }).
       error(function (data, status, headers, config) {
         console.log("error");
       });
 
     }
-    
   }).
   controller('createCtrl', function ($scope, $rootScope) {
     // write Ctrl here
-    if($rootScope.newDeck) {
-
-    }
   }).
   controller('aboutCtrl', function ($scope) {
     // write Ctrl here
