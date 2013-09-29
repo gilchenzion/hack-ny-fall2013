@@ -476,12 +476,21 @@ body {
   .controlset:after {
     clear: both; }
 
-.nouns.card {
+.nouns div.card p {
   color: #161620; }
 
-.adjs.card {
+.adjs div.card p {
   color: #c5191e; }
 
+@media print {
+  h2 {
+    display: none; }
+
+  #nav {
+    display: none; }
+
+  #footer {
+    display: none; } }
 input.title {
   font-size: 2em; }
 

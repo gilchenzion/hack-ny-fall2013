@@ -12,11 +12,23 @@
   width:100%;
 
 }
-.nouns.card {
+.nouns div.card p{
   color:$nounColor;
 }
-.adjs.card {
+.adjs div.card p{
   color:$adjColor;
+}
+
+@media print {
+    h2 {
+      display:none;
+    }
+  #nav {
+    display:none;
+  }
+  #footer {
+    display:none;
+  }
 }
 
 input.title {
