@@ -410,10 +410,8 @@ button, .button {
   text-align: center; }
   .card:last-child {
     margin-right: 0; }
-  .card:nth-child(2n) {
+  .card:nth-child(n) {
     margin-right: 0; }
-  .card:nth-child(2n+1) {
-    clear: left; }
   .card p, .card textarea {
     font-size: 2em;
     margin-top: 4em; }
