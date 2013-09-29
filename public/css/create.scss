@@ -1,6 +1,11 @@
 @import "colors";
+.deck {
+  @include outer-container;
+}
 
 .card {
+  @include span-columns(6);
+  @include omega(2n);
   position:relative;
 
   background-color:$cardColor;
@@ -8,16 +13,13 @@
 
   border-radius:5px;
 
-  @include span-columns(3);
   height:20em;
 
-  display:table-cell;
-  vertical-align:middle;
-  text-align:middle;
+  text-align:center;
 
-  span.text {
-    
+  p, textarea {
     font-size:2em;
+    margin-top:4em;
   }
   &.noun {
     color:$nounColor;
@@ -27,8 +29,17 @@
   }
 
   button {
-    position:absolute;
-    right:0px;
-    top:0px;
+    float:right;
+    margin:-1px;
+    font-size:1.5em;
+
+    &.delete {
+      @include gradient($cancel);
+    }
   }
+}
+
+.nouns, .adjs {
+  @include span-columns(6);
+  @include outer-container;
 }
