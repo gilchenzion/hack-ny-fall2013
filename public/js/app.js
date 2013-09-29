@@ -14,9 +14,9 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/home',
       controller: 'homeCtrl'
     }).
-    when('/custom', {
-      templateUrl: 'partials/custom',
-      controller: 'customCtrl'
+    when('/create', {
+      templateUrl: 'partials/create',
+      controller: 'createCtrl'
     }).
     when('/about', {
       templateUrl: 'partials/about',

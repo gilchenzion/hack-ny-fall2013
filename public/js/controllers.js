@@ -21,17 +21,26 @@ angular.module('myApp.controllers', []).
     };
 
   }).
-  controller('homeCtrl', function ($scope) {
-    
+  controller('homeCtrl', function ($scope, $http, $rootScope, $location) {
+
     $scope.submit = function() {
-    
+      console.log($scope.formText);
+      
       $http({
-        method: 'Get',
-        url: '/api/decks/generate',
-        params: '{text : $scope.formText}'
+        method: 'GET',
+        url: '/decks/generate',
+        params: {q: $scope.formText,
+          adjs: 10, max_nouns: 30}
       }).
       success(function (data, status, headers, config) {
+        $rootScope.newDeck = data;
         console.log(data);
+        console.log(status);
+        console.log(headers);
+        console.log(config);
+/*        $scope.$apply(function() {
+          $location.path("/create"); 
+        });*/
       }).
       error(function (data, status, headers, config) {
         console.log("error");
@@ -40,9 +49,11 @@ angular.module('myApp.controllers', []).
     }
     
   }).
-  controller('createCtrl', function ($scope) {
+  controller('createCtrl', function ($scope, $rootScope) {
     // write Ctrl here
-    
+    if($rootScope.newDeck) {
+
+    }
   }).
   controller('aboutCtrl', function ($scope) {
     // write Ctrl here
