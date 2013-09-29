@@ -47,7 +47,7 @@ controller('homeCtrl', function ($scope, $http, $rootScope, $location) {
             method: 'GET',
             url: '/decks/generate',
             params: {q: $scope.formText,
-                adjs: 10, max_nouns: 30}
+                adjs: 30, max_nouns: 30}
         }).
         success(function (data, status, headers, config) {
             $rootScope.newDeck = data;
