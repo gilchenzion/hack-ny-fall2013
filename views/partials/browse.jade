@@ -1,0 +1,6 @@
+h1 Decks
+  .decklist 
+    .deck.browse(ng-repeat="deck in decks")
+      a(href="decks/{{deck._id}}") {{deck.title}}
+      button.upvote(ng-click="vote('{{deck._id}}')") {{deck.numOfVotes}} likes
+      p {{deck.description}}

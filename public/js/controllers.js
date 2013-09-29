@@ -106,19 +106,31 @@ controller('homeCtrl', function ($scope, $http, $rootScope, $location) {
 
 }).
 controller('createCtrl', function ($scope, $rootScope, $http, $location) {
+	console.log("In create control...");
+if (!$scope['newDeck']) {
+	$scope.newDeck = {};
+	$scope.newDeck.adjs = [];
+	$scope.newDeck.nouns = [];
+}
+    $scope.addAdjective = function(deck) {
+	    deck.adjs.unshift('New Card');
+    }
+    $scope.addNoun = function(deck) {
+	    deck.nouns.unshift('New Card');
+    }
     $scope.publish = function(deck) {
         var real_deck = {
             title: $scope.title,
-description: $scope.description,
-numOfCards: deck.nouns.length + deck.adjs.length,
-numOfNouns:deck.nouns.length,
-numOfAdjs: deck.adjs.length,
-numOfVotes:0,
-tags: [],
-nounCards:deck.nouns,
-adjCards:deck.adjs,
-generated:false,
-editorsPick:false
+		description: $scope.description,
+		numOfCards: deck.nouns.length + deck.adjs.length,
+		numOfNouns:deck.nouns.length,
+		numOfAdjs: deck.adjs.length,
+		numOfVotes:0,
+		tags: [],
+		nounCards:deck.nouns,
+		adjCards:deck.adjs,
+		generated:false,
+		editorsPick:false
         };
         console.log(real_deck.title);
         $http({
