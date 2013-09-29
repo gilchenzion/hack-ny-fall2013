@@ -16,14 +16,24 @@
 
  .deck {
    height:5em;
+   padding:0.15em;
+   background-color:#AAA;
+   border-radius:5px;
    @include span-columns(3);
    
     @include media($mobile) {
+      margin:0;
+      margin-bottom:0.5em;
       @include span-columns(6);
+
+      &:last-child {
+      margin-bottom:0em;
+      }
     }
+    margin:0.15em;
    float:left;
    display:block;
 
-   margin-bottom:0.5em;
-   border:1px solid white;
+   border:1px solid #555;
+   @include box-shadow(0 0 1px 1px #555 inset);
  }

@@ -107,8 +107,9 @@ input#generate-terms {
 }
 
 .deckboxes {
+  @include span-columns(12);
   .deckbox {
-    padding:0.25em;
+    padding:0.5em;
     background-color:#666;
     color:white;
     @include span-columns(4);
