@@ -1,6 +1,6 @@
 .controlset
-  input.title(type="text", name="title", ng-model="title")
-  textarea.description(name="description", ng-model="description")
+  input.title(type="text", name="title", ng-model="title", placeholder="Title")
+  input.description(type="hidden", name="description", ng-model="description", placeholder="This is a custom deck made by the powers of HackNY") 
   button Print
   button.publish(ng-click="publish(newDeck)") Publish 
 .nouns

@@ -10,7 +10,14 @@
   text-align:center;
   @include clearfix;
   width:100%;
-
+  button {
+    height: 2em;
+    border:none;
+    border-radius: 5px;
+  }
+  .publish {
+    background: $teal;
+  }
 }
 .nouns div.card p{
   color:$nounColor;

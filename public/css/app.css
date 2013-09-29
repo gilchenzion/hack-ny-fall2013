@@ -572,6 +572,12 @@ body {
     display: table; }
   .controlset:after {
     clear: both; }
+  .controlset button {
+    height: 2em;
+    border: none;
+    border-radius: 5px; }
+  .controlset .publish {
+    background: #59acf7; }
 
 .nouns div.card p {
   color: #161620; }

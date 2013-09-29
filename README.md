@@ -7,3 +7,4 @@ The Team:
 * Gil Chen-Zion
 * Gilad Penn (freeslugs)
 * Paul Cadosch (Mimoun Cadosch)
+* Josh Augustin
