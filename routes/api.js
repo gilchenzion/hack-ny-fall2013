@@ -41,7 +41,6 @@ exports.getAllDecks = function (req, res) {
 		if(err) {
 			return handleError(err);
 		} else {
-			console.log(result.length);
 			return res.send({
 				count: result.length,
 				result: result
@@ -71,3 +70,9 @@ exports.postDeck = function (req, res) {
 	});
 	return res.send(newDeck);
 };
+
+exports.generateDeck = function (req, res) {
+	return res.send({
+		working: true
+	});
+}

@@ -51,6 +51,7 @@ app.get('/partials/:name', routes.partials);
 app.get('/decks', api.getAllDecks);
 app.get('/deck/:id', api.getDeckById);
 app.post('/decks', api.postDeck);
+app.post('/decks/generate', api.generateDeck);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
