@@ -70,6 +70,23 @@ exports.getDeckById = function (req, res) {
 	});
 };
 
+exports.postVote = function (req, res) {
+	Deck.findById(req.params.id, function(err, result) {
+		if(err) {
+			console.log(error);
+		} else {
+			result.numOfVotes = result.numOfVotes + 1;
+			result.save(function(err, r) {
+				if(err) {
+					console.log(error);
+				} else {
+					return res.json(r);
+				}
+			});
+		}
+	})
+}
+
 exports.postDeck = function (req, res) {
 	req.query.nounCards = JSON.parse(req.query.nounCards);
 	req.query.adjCards = JSON.parse(req.query.adjCards);
