@@ -36,10 +36,11 @@ a {
 	li {
     @include border-ends(10px);
 		@include span-columns(4);
-		padding: 1em 0em;
 		text-align:center;
 
 		a {
+      display:block;
+      padding: 1em 0em;
 			color:white;
 			@include fill-parent;
 		}
