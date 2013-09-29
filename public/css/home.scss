@@ -29,7 +29,7 @@ p.description {
     input {
       border-top-left-radius:6px;
       border-bottom-left-radius:6px;
-      width: 350px;
+      width: 550px;
       
       @include media($mobile) {
         @include span-columns(6);
