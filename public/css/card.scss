@@ -2,6 +2,7 @@
  @import "neat/neat";
 
  @import "colors";
+ @import "main";
 
  .card {
    border-radius:10px;
@@ -11,4 +12,18 @@
 
    height:20em;
    width:10em;
+ }
+
+ .deck {
+   height:5em;
+   @include span-columns(3);
+   
+    @include media($mobile) {
+      @include span-columns(6);
+    }
+   float:left;
+   display:block;
+
+   margin-bottom:0.5em;
+   border:1px solid white;
  }
