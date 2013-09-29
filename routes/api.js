@@ -28,13 +28,16 @@ var Deck = db.model('Deck', deckSchema);
 exports.getAllDecks = function (req, res) {
 	params = {};
 	var query = req._parsedUrl.query;
+	var objParams = queryString.parse(query);
 	if(query != "") {
-		var objParams = queryString.parse(query);
 		var params = {
 			title: { $regex: new RegExp(objParams.title), $options: 'i' }
 		}
 	}
-	Deck.find(params, function(err, result) {
+	var page = objParams.page;
+	var limit = objParams.limit;
+	var skip = limit * (page - 1);
+	Deck.find(params, {} ,{limit: limit, skip: skip}, function(err, result) {
 		if(err) {
 			return handleError(err);
 		} else {
