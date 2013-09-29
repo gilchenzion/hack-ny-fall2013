@@ -1,5 +1,6 @@
 .controlset
-  input(type="text", name="title")
+  input.title(type="text", name="title")
+  br
   button Print
   button Publish
 .nouns
@@ -10,12 +11,6 @@
     
     p(ng-hide="editing")
       {{noun}}
-
-  .card
-    form(ng-show="editing")
-      button.edit(ng-show="editing", ng-click="editing = false; newDeck.nouns[$index] = newText") done
-      textarea(ng-model="newText", ng-init="newText = noun")
-
 .adjs
   h2 Adjectives
   .card(ng-repeat="adj in newDeck.adjs") 
@@ -24,8 +19,3 @@
     
     p(ng-hide="editing")
       {{adj}}
-  .card
-    form(ng-show="editing")
-      button.edit(ng-show="editing", ng-click="editing = false; newDeck.adjs[$index] = newText2") done
-      textarea(ng-model="newText2", ng-init="newText2 = adj")
-      
