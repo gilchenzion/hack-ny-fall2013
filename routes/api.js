@@ -1,5 +1,7 @@
 
 var mongoose = require('mongoose');
+var queryString = require('querystring');
+
 var mongourl = process.env.MONGOLAB_URI || 
   process.env.MONGOHQ_URL || 
   'mongodb://localhost/decks'; 
@@ -24,11 +26,23 @@ var deckSchema = mongoose.Schema({
 var Deck = db.model('Deck', deckSchema);
 
 exports.getAllDecks = function (req, res) {
-	Deck.find({}, function(err, result) {
+	params = {};
+	var query = req._parsedUrl.query;
+	if(query != "") {
+		var objParams = queryString.parse(query);
+		var params = {
+			title: { $regex: new RegExp(objParams.title), $options: 'i' }
+		}
+	}
+	Deck.find(params, function(err, result) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.send(result);
+			console.log(result.length);
+			return res.send({
+				count: result.length,
+				result: result
+			});
 		}
 	});
 };
