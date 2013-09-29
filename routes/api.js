@@ -73,7 +73,9 @@ exports.postDeck = function (req, res) {
 };
 
 exports.generateDeck = function (req, res) {
-	var query = "muslim";
+	var query = req._parsedUrl.query;
+	var objParams = queryString.parse(query);
+	var query = objParams.q;
 	var nyTimes = "http://api.nytimes.com/svc/semantic/v2/concept/search.json?fields=article_list&api-key=719abfb140844f90fe632b5f28db4118:3:68190560&query=" + query;
 	request(nyTimes, function(err, result) {
 		var finalWords = [];
