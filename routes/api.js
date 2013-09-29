@@ -73,8 +73,11 @@ exports.postDeck = function (req, res) {
 };
 
 exports.generateDeck = function (req, res) {
+	// get url string and convert to json object
 	var query = req._parsedUrl.query;
 	var objParams = queryString.parse(query);
+
+	//grab params and set defauls
 	var query = objParams.q;
 	var adjs = objParams.adjs;
 	if(adjs == null) {
@@ -84,17 +87,19 @@ exports.generateDeck = function (req, res) {
 	if(maxNouns == null) {
 		maxNouns = 50;
 	}
-	var finalAdjs;
+
+	//generate random adjs
 	var justAdjs = [];
 	var i, j;
 	var wordnik = "http://api.wordnik.com/v4/words.json/randomWords?hasDictionaryDef=false&includePartOfSpeech=adjective&minCorpusCount=1000000&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=5&maxLength=-1&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5&limit=" + adjs;
 	request(wordnik, function(err, result) {
-		finalAdjs = JSON.parse(result.body);
+		var finalAdjs = JSON.parse(result.body);
 		for(i = 0; i < adjs; i++) {
 			justAdjs.push(finalAdjs[i].word);
 		}
 	});
 
+	//pull relevent words from NY Times
 	var nyTimes = "http://api.nytimes.com/svc/semantic/v2/concept/search.json?fields=article_list&api-key=719abfb140844f90fe632b5f28db4118:3:68190560&query=" + query;
 	request(nyTimes, function(err, result) {
 		var finalWords = [];
@@ -125,6 +130,8 @@ exports.generateDeck = function (req, res) {
 				}
 			}
 		}
+
+		// return list of nouns and adjs
 		res.send({
 			nouns: uniqueWords,
 			adjs: justAdjs
