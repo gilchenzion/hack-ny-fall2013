@@ -22,7 +22,21 @@ angular.module('myApp.controllers', []).
 
   }).
   controller('homeCtrl', function ($scope) {
-    // write Ctrl here
+    $scope.submit = function() {
+    
+      $http({
+        method: 'POST',
+        url: '/api/decks/generate',
+        params: '{text : $scope.formText}'
+      }).
+      success(function (data, status, headers, config) {
+        console.log(data);
+      }).
+      error(function (data, status, headers, config) {
+        console.log("error");
+      });
+
+    }
     
   }).
   controller('createCtrl', function ($scope) {
