@@ -7,13 +7,20 @@
 .controlset {
   display:block;
   clear:both;
+  text-align:center;
   @include clearfix;
+  width:100%;
+
 }
 .nouns.card {
   color:$nounColor;
 }
 .adjs.card {
   color:$adjColor;
+}
+
+input.title {
+  font-size:2em;
 }
 
 .card {
