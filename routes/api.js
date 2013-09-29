@@ -1,6 +1,7 @@
 
 var mongoose = require('mongoose');
 var queryString = require('querystring');
+var request = require('request');
 
 var mongourl = process.env.MONGOLAB_URI || 
   process.env.MONGOHQ_URL || 
@@ -72,7 +73,25 @@ exports.postDeck = function (req, res) {
 };
 
 exports.generateDeck = function (req, res) {
-	return res.send({
-		working: true
+	var query = "muslim";
+	var nyTimes = "http://api.nytimes.com/svc/semantic/v2/concept/search.json?fields=article_list&api-key=719abfb140844f90fe632b5f28db4118:3:68190560&query=" + query;
+	request(nyTimes, function(err, result) {
+		var finalWords = [];
+		console.log(result.body);
+		var results = JSON.parse(result.body).results
+		console.log(results);
+		var i;
+		for(i =0; i < results.length; i++) {
+			var r = results[i].article_list.results;
+			var j;
+			for(j = 0; j < r.length; j++) {
+				var concepts = r[j].concepts;
+				finalWords = finalWords.concat(concepts.nytd_des, concepts.nytd_geo, concepts.nytd_per, concepts.nytd_org);
+			}
+		}
+		
+		res.send({
+			result: finalWords
+		});
 	});
-}
+};
