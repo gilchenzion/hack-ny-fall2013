@@ -2,29 +2,28 @@
   h2 New Deck
   button Print
   button Publish
-
-    .nouns
-      h2 Nouns
-      .card(ng-repeat="noun in newDeck.nouns")
-        button.delete(ng-click="newDeck.nouns.splice($index, 1)") delete 
-        button.edit(ng-hide="editing", ng-click="editing = true") edit
-        
-        p(ng-hide="editing")
-          {{noun}}
-  
-        form(ng-show="editing")
-          button.edit(ng-show="editing", ng-click="editing = false; newDeck.nouns[$index] = newText") done
-          textarea(ng-model="newText", ng-init="newText = noun")
-    .adjs
-      h2 Adjectives
-      .card(ng-repeat="adj in newDeck.adjs") 
-        button.delete(ng-click="newDeck.adjs.splice($index, 1)") delete
-        button.edit(ng-hide="editing", ng-click="editing = true") edit
-        
-        p(ng-hide="editing")
-          {{adj}}
+  .nouns
+    h2 Nouns
+    .card(ng-repeat="noun in newDeck.nouns")
+      button.delete(ng-click="newDeck.nouns.splice($index, 1)") delete 
+      button.edit(ng-hide="editing", ng-click="editing = true") edit
       
-        form(ng-show="editing")
-          button.edit(ng-show="editing", ng-click="editing = false; newDeck.adjs[$index] = newText2") done
-          textarea(ng-model="newText2", ng-init="newText2 = adj")
+      p(ng-hide="editing")
+        {{noun}}
+
+      form(ng-show="editing")
+        button.edit(ng-show="editing", ng-click="editing = false; newDeck.nouns[$index] = newText") done
+        textarea(ng-model="newText", ng-init="newText = noun")
+  .adjs
+    h2 Adjectives
+    .card(ng-repeat="adj in newDeck.adjs") 
+      button.delete(ng-click="newDeck.adjs.splice($index, 1)") delete
+      button.edit(ng-hide="editing", ng-click="editing = true") edit
+      
+      p(ng-hide="editing")
+        {{adj}}
+    
+      form(ng-show="editing")
+        button.edit(ng-show="editing", ng-click="editing = false; newDeck.adjs[$index] = newText2") done
+        textarea(ng-model="newText2", ng-init="newText2 = adj")
         
