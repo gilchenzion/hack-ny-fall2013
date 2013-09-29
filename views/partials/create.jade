@@ -3,7 +3,7 @@
   .nouns(ng-repeat="noun in newDeck.nouns")
     .card 
       button.edit(ng-hide="editing", ng-click="editing = true") edit
-      p
+      p(ng-hide="editing")
         {{noun}}
       
       form(ng-show="editing")
@@ -12,7 +12,7 @@
   .adjs(ng-repeat="adj in newDeck.adjs")
     .card 
       button.edit(ng-hide="editing", ng-click="editing = true") edit
-      p
+      p(ng-hide="editing")
         {{adj}}
       
       form(ng-show="editing")
