@@ -10,8 +10,21 @@ angular.module('myApp.controllers', []).
     };
 
   }).
+  controller('browseCtrl', function ($scope, $http, $rootScope, $location) {
+      $http({
+        method: 'GET',
+        url: '/decks',
+      }).
+      success(function (data, status, headers, config) {
+        $rootScope.decks = data;
+        console.log(data);
+      }).
+      error(function (data, status, headers, config) {
+        console.log("error");
+      });
+  }).
   controller('homeCtrl', function ($scope, $http, $rootScope, $location) {
-
+	  console.log("In home controller.");
     $scope.submit = function() {
       $scope.loading = true;
       

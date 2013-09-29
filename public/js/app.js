@@ -22,6 +22,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/about',
       controller: 'aboutCtrl'
     }).
+    when('/browse', {
+      templateUrl: 'partials/browse',
+      controller: 'browseCtrl'
+    }).
     when('/decks/:deck_id', {
       templateUrl: 'partials/view',
       controller: 'viewCtrl'
