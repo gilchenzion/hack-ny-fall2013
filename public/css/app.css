@@ -596,7 +596,8 @@ body {
     display: none; }
 
   .card {
-    height: 33%; }
+    height: 290px !important;
+    font-size: .75em; }
 
   button {
     display: none; }
@@ -654,4 +655,40 @@ input.title {
     content: " ";
     display: table; }
   .nouns:after, .adjs:after {
+    clear: both; }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.decklist {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto; }
+  .decklist:before, .decklist:after {
+    content: " ";
+    display: table; }
+  .decklist:after {
+    clear: both; }
+
+.deck.browse {
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 31.76157%;
+  height: 6em;
+  float: left;
+  border-radius: 10px;
+  background-color: white;
+  margin: 10px;
+  text-align: center; }
+  .deck.browse:last-child {
+    margin-right: 0; }
+  .deck.browse:nth-child(n) {
+    margin-right: 0; }
+  .deck.browse a {
+    margin-top: 2em;
+    display: block;
     clear: both; }
