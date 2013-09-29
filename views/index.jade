@@ -8,17 +8,10 @@ block body
       li(ng-class="{active:isActive('/custom')}")
         a(href='create') Custom Create
 
-    h1 PageName
+    #main(ng-view)
 
-    div(ng-view)
-
-    div
-      | Angular seed app: v
-      span(app-version)
-
-    .footer
+    #footer
       a(href='about') About us
-
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')

@@ -48,7 +48,6 @@ a {
     float: left;
     margin-right: 2.35765%;
     width: 31.76157%;
-    padding: 1em 0em;
     text-align: center;
     list-style-type: none;
     display: inline-block; }
@@ -61,6 +60,8 @@ a {
     #nav li:last-child {
       margin-right: 0; }
     #nav li a {
+      display: block;
+      padding: 1em 0em;
       color: white;
       width: 100%; }
     #nav li.active {
