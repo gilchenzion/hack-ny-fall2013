@@ -1,4 +1,9 @@
-p welcome home
-p
-  | Showing of 'interpolate' filter:
-  | {{ 'Current version is v%VERSION%.' | interpolate }}
+.jumbotron
+  form
+    input.search(type="text", placeholder="Miley Cyrus")
+    button Generate
+
+.deckboxes
+  .deckbox.popular
+  .deckbox.trending
+  .deckbox.recent

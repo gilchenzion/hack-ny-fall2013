@@ -16,10 +16,8 @@ angular.module('myApp.controllers', []).
       $scope.name = 'Error!'
     });
 
-    $scope.isActive = function(route) {
-        console.log(route);
-        console.log($location);  
-        return route === $location.path();
+    $scope.isActive = function(route) { 
+      return route === $location.path();
     };
 
   }).

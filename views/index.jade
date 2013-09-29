@@ -4,19 +4,14 @@ block body
   div(ng-controller='AppCtrl')
     ul.menu#nav
       li(ng-class="{active:isActive('/')}")
-        a(href='') home
-      li(ng-class="{active:isActive('/create')}")
-        a(href='create') create
-      li(ng-class="{active:isActive('/about')}")
-        a(href='about') about
+        a(href='') Home
+      li(ng-class="{active:isActive('/custom')}")
+        a(href='create') Custom Create
 
-    h1 PageName
+    #main(ng-view)
 
-    div(ng-view)
-
-    div
-      | Angular seed app: v
-      span(app-version)
+    #footer
+      a(href='about') About us
 
   script(src='js/lib/angular/angular.js')
   script(src='js/app.js')
