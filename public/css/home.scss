@@ -14,6 +14,7 @@
 p.description {
     text-align:center;
     margin-bottom:1em;
+    color: #FF3333;
 }
 
 #querybox {
@@ -22,7 +23,8 @@ p.description {
     input, button {
       padding:0.25em;
       font-size: 18px;
-      color: #FFFFFF;
+      color: #000000;
+
     }
     input {
       border-top-left-radius:6px;
@@ -38,7 +40,7 @@ p.description {
 
       &:active {
         outline:0;
-        border-color:$active;
+        border-color:#999999;
       }
     }
     button {
@@ -66,6 +68,7 @@ p.description {
     padding-bottom: 0;
 
     h2 {
+      color: #EAA83A;
       padding-bottom:0.5em;
       border-bottom:1px solid lighten($gray, 10);
     }
