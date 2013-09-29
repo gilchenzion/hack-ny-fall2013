@@ -23,11 +23,17 @@ p.description {
   .decklist {
     @include outer-container;
     @include span-columns(4);
+    
 
     text-align:center;
     background-color:#CCC;
 
     padding:0.5em;
+
+    @include media($tablet) {
+    }
+    @include media($mobile) {
+    }
 
     .deck {
       height:3em;
