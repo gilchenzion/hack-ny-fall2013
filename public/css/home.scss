@@ -1,3 +1,5 @@
+@import "main";
+
 .jumbotron {
   @include span-columns(12);
   padding:1.5em 3em;
@@ -18,10 +20,28 @@ p.description {
 }
 
 #decklist-wrap {
-  @include outer-container;
   .decklist {
-    @include span-columns(3);
+    @include outer-container;
+    @include span-columns(4);
+
+    text-align:center;
+    background-color:#CCC;
+
+    padding:0.5em;
+
     .deck {
+      height:3em;
+
+      @include span-columns(3);
+
+      @include media($tablet) {
+        @include span-columns(4);
+      }
+      @include media($mobile) {
+        @include span-columns(6);
+      }
+      background-color:#333;
+      border:1px solid white;
     }
   }
 }
