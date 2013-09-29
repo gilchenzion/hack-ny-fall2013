@@ -1,6 +1,8 @@
 .jumbotron {
   @include span-columns(12);
   padding:1.5em 3em;
+
+  font-size:2em;
 }
 
 p.description {
