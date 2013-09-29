@@ -1,0 +1,46 @@
+@import "mixins";
+
+@import "bourbon/bourbon";
+@import "neat/neat";
+
+$mobile: new-breakpoint(max-width 767px 6);
+$tablet: new-breakpoint(max-width 980px 9);
+
+body {
+  background-color:#F0F0F0;
+  color:#333;
+}
+
+#container {
+  @include outer-container;
+
+  @include media($mobile) {
+    margin:0;
+  }
+}
+
+#nav {
+  @include gradient(#CEA);
+  @include span-columns(12);
+  border-radius:10px;
+
+  li {
+    @include round-ends;
+    @include span-columns(4);
+    list-style-type:none;
+    display:inline-block;
+
+    text-align:center;
+
+    a {
+      display:block;
+      padding: 1em 0em;
+      color:white;
+    }
+  }
+
+  margin-bottom:1em;
+}
+
+#footer {
+}
