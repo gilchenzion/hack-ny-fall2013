@@ -22,6 +22,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/about',
       controller: 'aboutCtrl'
     }).
+    when('/decks/:deck_id', {
+      templateUrl: 'partials/view',
+      controller: 'viewCtrl'
+    }).
     otherwise({
       redirectTo: '/home'
     });

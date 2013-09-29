@@ -467,7 +467,9 @@ body {
 .controlset {
   display: block;
   clear: both;
-  *zoom: 1; }
+  text-align: center;
+  *zoom: 1;
+  width: 100%; }
   .controlset:before, .controlset:after {
     content: " ";
     display: table; }
@@ -479,6 +481,9 @@ body {
 
 .adjs.card {
   color: #c5191e; }
+
+input.title {
+  font-size: 2em; }
 
 .card {
   display: block;
