@@ -1,0 +1,49 @@
+ @import "bourbon/bourbon";
+ @import "neat/neat";
+
+ @import "colors";
+
+body {
+	@include outer-container;
+
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+a {
+	text-decoration:none;
+}
+
+@mixin border-ends($radius) {
+  &:first-child {
+    border-radius:$radius;
+  }
+  &:last-child {
+    border-radius:$radius;
+  }
+}
+
+#nav {
+	@include span-columns(12);
+  padding:0;
+
+  @include border-ends(10px);
+
+	@include linear-gradient($navColor, lighten($navColor,10));
+	li {
+		@include span-columns(4);
+		padding: 1em 0em;
+		text-align:center;
+
+		a {
+			color:white;
+			@include fill-parent;
+		}
+
+		list-style-type:none;
+		display:inline-block;
+
+		&.active {
+			@include linear-gradient($activeColor, lighten($activeColor, 10));
+		}
+	}
+}

@@ -3,7 +3,7 @@
 /* Controllers */
 
 angular.module('myApp.controllers', []).
-  controller('AppCtrl', function ($scope, $http) {
+  controller('AppCtrl', function ($scope, $http, $location) {
 
     $http({
       method: 'GET',
@@ -15,6 +15,12 @@ angular.module('myApp.controllers', []).
     error(function (data, status, headers, config) {
       $scope.name = 'Error!'
     });
+
+    $scope.isActive = function(route) {
+        console.log(route);
+        console.log($location);  
+        return route === $location.path();
+    };
 
   }).
   controller('homeCtrl', function ($scope) {
