@@ -1,7 +1,8 @@
 .controlset
-  input.title(type="text", name="title")
+  input.title(type="text", name="title", ng-model="title")
+  textarea.description(name="description", ng-model="description")
   button Print
-  button Publish
+  button.publish(ng-click="publish(newDeck)") Publish 
 .nouns
   h2 Nouns
   .card(ng-repeat="noun in newDeck.nouns")

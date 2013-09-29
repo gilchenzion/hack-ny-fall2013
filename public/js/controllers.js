@@ -39,7 +39,6 @@ angular.module('myApp.controllers', []).
       }).
       success(function (data, status, headers, config) {
         $rootScope.voteDecks = data;
-        console.log(data);
       }).
       error(function (data, status, headers, config) {
         console.log("error");
@@ -52,7 +51,6 @@ angular.module('myApp.controllers', []).
       }).
       success(function (data, status, headers, config) {
         $rootScope.dateDecks = data;
-        console.log(data);
       }).
       error(function (data, status, headers, config) {
         console.log("error");
@@ -65,7 +63,6 @@ angular.module('myApp.controllers', []).
       }).
       success(function (data, status, headers, config) {
         $rootScope.editorsDecks = data;
-        console.log(data);
       }).
       error(function (data, status, headers, config) {
         console.log("error");
@@ -80,8 +77,35 @@ angular.module('myApp.controllers', []).
     }
 
   }).
-  controller('createCtrl', function ($scope, $rootScope) {
-    // write Ctrl here
+  controller('createCtrl', function ($scope, $rootScope, $http, $location) {
+      $scope.publish = function(deck) {
+	      var real_deck = {
+		title: $scope.title,
+                description: $scope.description,
+                numOfCards: deck.nouns.length + deck.adjs.length,
+	        numOfNouns:deck.nouns.length,
+	  	numOfAdjs: deck.adjs.length,
+	  	numOfVotes:0,
+	  	tags: [],
+	  	nounCards:deck.nouns,
+	  	adjCards:deck.adjs,
+	  	generated:false,
+	  	editorsPick:false
+	      };
+	      console.log(real_deck.title);
+	      $http({
+		method: 'POST',
+		url: '/decks/create',
+		params: real_deck
+	      }).
+	      success(function (data, status, headers, config) {
+		$rootScope.newDeck = data;
+		  $location.path("/");
+	      }).
+	      error(function (data, status, headers, config) {
+		console.log("error");
+	      });
+      }
   }).
   controller('viewCtrl', function ($scope, $rootScope, $route, $routeParams, $http, $location) {
       $http({

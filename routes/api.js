@@ -71,7 +71,10 @@ exports.getDeckById = function (req, res) {
 };
 
 exports.postDeck = function (req, res) {
-	var newDeck = new Deck(req.body);
+	req.query.nounCards = JSON.parse(req.query.nounCards);
+	req.query.adjCards = JSON.parse(req.query.adjCards);
+
+	var newDeck = new Deck(req.query);
 	newDeck.save(function(err) {
 		if(err) {
 			return handleError(err);
