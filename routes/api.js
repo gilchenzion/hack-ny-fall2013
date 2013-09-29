@@ -82,18 +82,34 @@ exports.generateDeck = function (req, res) {
 		console.log(result.body);
 		var results = JSON.parse(result.body).results
 		console.log(results);
-		var i;
+		var i, j;
 		for(i =0; i < results.length; i++) {
 			var r = results[i].article_list.results;
-			var j;
 			for(j = 0; j < r.length; j++) {
 				var concepts = r[j].concepts;
 				finalWords = finalWords.concat(concepts.nytd_des, concepts.nytd_geo, concepts.nytd_per, concepts.nytd_org);
 			}
 		}
-		
+		var uniqueWords = [];
+		for(i=0; i < finalWords.length; i++) {
+			if(finalWords[i] != null) {
+				if(uniqueWords.length == 0) {
+					uniqueWords.push(finalWords[i]);
+				} else {
+					var isRepeat = false;
+					for(j= 0; j < uniqueWords.length; j++) {
+						if(uniqueWords[j] === finalWords[i]) {
+							isRepeat = true;
+						}
+					}
+					if(isRepeat == false) {
+						uniqueWords.push(finalWords[i]);
+					}
+				}
+			}
+		}
 		res.send({
-			result: finalWords
+			result: uniqueWords
 		});
 	});
 };
