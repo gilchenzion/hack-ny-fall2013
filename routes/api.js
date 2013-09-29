@@ -65,7 +65,7 @@ exports.getDeckById = function (req, res) {
 		if(err) {
 			return handleError(err);
 		} else {
-			return res.render('view', {result: result});
+			return res.json(result);
 		}
 	});
 };
