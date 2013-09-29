@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
 html, body, div, span, applet, object, iframe,
 p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -385,6 +386,72 @@ button, .button {
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #8ac4f9), color-stop(100%, #59acf7));
     background-image: -webkit-linear-gradient(#8ac4f9, #59acf7);
     background-image: linear-gradient(#8ac4f9, #59acf7); }
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  background-color: #F0F0F0;
+  color: #333;
+  font-family: Lato, Arial, sans-serif; }
+
+#container {
+  *zoom: 1;
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5em; }
+  #container:before, #container:after {
+    content: " ";
+    display: table; }
+  #container:after {
+    clear: both; }
+  @media screen and (max-width: 767px) {
+    #container {
+      margin: 0; } }
+
+#nav {
+  background-color: #919297;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #919297), color-stop(100%, #77787e));
+  background-image: -webkit-linear-gradient(#919297, #77787e);
+  background-image: linear-gradient(#919297, #77787e);
+  display: block;
+  float: left;
+  margin-right: 2.35765%;
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1em; }
+  #nav:last-child {
+    margin-right: 0; }
+  #nav li {
+    border-radius: 10px;
+    display: block;
+    float: left;
+    margin-right: 2.35765%;
+    width: 31.76157%;
+    list-style-type: none;
+    display: inline-block;
+    text-align: center; }
+    #nav li:last-child {
+      margin-right: 0; }
+    #nav li a {
+      display: block;
+      padding: 1em 0em;
+      color: white; }
+    #nav li.active {
+      background-color: #59acf7;
+      background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #59acf7), color-stop(100%, #2993f4));
+      background-image: -webkit-linear-gradient(#59acf7, #2993f4);
+      background-image: linear-gradient(#59acf7, #2993f4); }
+
+#footer {
+  position: fixed;
+  bottom: 0px;
+  height: 3em;
+  background-color: #77787e;
+  width: 100%; }
 
 .deck {
   *zoom: 1;
