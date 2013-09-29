@@ -1,4 +1,5 @@
 @import "mixins";
+@import "colors";
 
 @import "bourbon/bourbon";
 @import "neat/neat";
@@ -21,12 +22,12 @@ body {
 }
 
 #nav {
-  @include gradient(#CEA);
+  @include gradient($mainNav);
   @include span-columns(12);
   border-radius:10px;
 
   li {
-    @include round-ends;
+    border-radius:10px;
     @include span-columns(4);
     list-style-type:none;
     display:inline-block;
@@ -37,6 +38,10 @@ body {
       display:block;
       padding: 1em 0em;
       color:white;
+    }
+
+    &.active {
+      @include gradient(darken($active,10));
     }
   }
 

@@ -1,0 +1,26 @@
+@import "main";
+@import "mixins";
+@import "colors";
+
+textarea, input, button {
+  font-size:1em;
+}
+
+input, textarea {
+  border:1px solid $gray;
+
+  &:focus {
+    outline:none;
+    border-color:$active;
+  }
+}
+
+button, .button {
+  border:1px solid $gray;
+  @include gradient($gray);
+  color:white;
+  &.primary {
+    border:1px solid $active;
+    @include gradient($active);
+  }
+}
