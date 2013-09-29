@@ -20,7 +20,6 @@ angular.module('myApp.controllers', []).
         console.log(route);
         console.log($location);  
         return route === $location.path();
-
     };
 
   }).
