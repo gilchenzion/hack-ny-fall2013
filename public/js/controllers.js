@@ -13,8 +13,8 @@ angular.module('myApp.controllers', []).
   controller('homeCtrl', function ($scope, $http, $rootScope, $location) {
 
     $scope.submit = function() {
-      console.log($scope.formText);
-
+      $scope.loading = true;
+      
       $http({
         method: 'GET',
         url: '/decks/generate',

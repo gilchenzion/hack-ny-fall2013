@@ -2,8 +2,9 @@
   p.description Generate your own deck of Hacks2Packs cards by typing in a search term below.
   #querybox
     form(ng-submit="submit()")
-      input(type="text", placeholder="Topic (ex. Miley Cyrus, Syria)...", ng-model="formText")
-      button.primary(type="submit") Generate
+      input(type="text", placeholder="Topic (ex. Miley Cyrus, Syria)...", ng-model="formText", ng-hide="loading")
+      p(ng-show="loading") Loading...
+      button.primary(type="submit", ng-hide="loading") Generate
 #decklist-wrap
   .decklist 
     h2 Popular
