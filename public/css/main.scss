@@ -1,16 +1,21 @@
- @import "bourbon/bourbon";
- @import "neat/neat";
+@import "bourbon/bourbon";
+@import "neat/neat";
 
- @import "colors";
+@import "colors";
+@import "forms";
 
+
+$mobile: new-breakpoint(max-width 767px 6);
 body {
-	@include outer-container;
+  @include outer-container;
 
-	font-family:Helvetica, Arial, sans-serif;
+  font-family:Helvetica, Arial, sans-serif;
+  color:#555;
+  background-color:#F0F0F0;
 }
 
 a {
-	text-decoration:none;
+  text-decoration:none;
 }
 
 @mixin border-ends($radius) {
@@ -25,33 +30,33 @@ a {
 }
 
 #nav {
-	@include span-columns(12);
+  @include span-columns(12);
   padding:0;
 
   @include border-ends(10px);
   border-top-right-radius:10px;
   border-bottom-right-radius:10px;
 
-	@include linear-gradient($navColor, lighten($navColor,10));
-	li {
+  @include linear-gradient($navColor, lighten($navColor,10));
+  li {
     @include border-ends(10px);
-		@include span-columns(4);
-		text-align:center;
+    @include span-columns(4);
+    text-align:center;
 
-		a {
+    a {
       display:block;
       padding: 1em 0em;
-			color:white;
-			@include fill-parent;
-		}
+      color:white;
+      @include fill-parent;
+    }
 
-		list-style-type:none;
-		display:inline-block;
+    list-style-type:none;
+    display:inline-block;
 
-		&.active {
-			@include linear-gradient($activeColor, lighten($activeColor, 10));
-		}
-	}
+    &.active {
+      @include active-button;
+    }
+  }
 }
 
 #main {
@@ -60,6 +65,40 @@ a {
 
 
 .jumbotron {
+  @include span-columns(12);
+  padding:1.5em;
+
+
+  @include media($mobile) {
+    padding:0em;
+  }
   text-align:center;
-  font-size:3em;
+  font-size:2.5em;
+  max-width:100%;
+}
+
+div {
+  @include outer-container;
+}
+
+#main p.description {
+  margin-bottom:2em;
+}
+
+input#generate-terms {
+  @include shift(1);
+  @include span-columns(7);
+
+  @include media($mobile) {
+    font-size:0.5em;
+    @include span-columns(4);
+    @include shift(0);
+  }
+}
+#generate {
+  @include span-columns(3);
+  @include media($mobile) {
+    font-size:0.5em;
+    @include span-columns(2);
+  }
 }

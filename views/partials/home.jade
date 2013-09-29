@@ -1,7 +1,9 @@
 .jumbotron
-  form
-    input.search(type="text", placeholder="Miley Cyrus")
-    button Generate
+  form(ng-submit="submit()")
+    p.description Generate your own deck of Hacks2Packs cards by typing in a search term below.
+
+    input.search#generate-terms(type="text", placeholder="Topic (ex. Miley Cyrus, Syria)...", ng-model="formText")
+    button#generate(type="submit") Generate
 
 .deckboxes
   .deckbox.popular
